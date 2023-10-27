@@ -50,18 +50,15 @@ const showMovies = (movies) => {
                           <div class="overview"> ${overview} <div>`;
 
     main.appendChild(movieEl);
-
-   
+    movieEl.addEventListener("click", () => {
   
+      const clickedMovieID = movie.id;
+     
+      // 해당 영화의 상세 정보 페이지로 이동합니다.
+      location.href = `./detail/moviedetail.html?id=${clickedMovieID}`;
+    });
+
 
   });
 };
 getMovies(APIURL);
-
-
-d
-
-
-
-
-
