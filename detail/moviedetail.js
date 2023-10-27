@@ -1,6 +1,9 @@
 // (쿼리 스트링을 활용) 클릭한 카드의 id값을 가져와서 해당 상세 페이지 JSON을 가져온다.
 
-const iddetail = 
+let urlStr = window.location.href;
+let url = new URL(urlStr);
+let urlparams = url.searchParams;
+let iddetail = urlparams.get('id');
 
 async function fetchMovieData() {
   const options = {
@@ -17,9 +20,11 @@ async function fetchMovieData() {
   );
   const data = await response.json();
   console.log(data);
-  return data.results;
+  return data;
 }
 fetchMovieData();
+
+
 
 // 가져온 정보값을 html에서 지정한 위치에 보낸다.
 //document.getElementById('영화 제목')와 innerHTML="" 활용
@@ -33,3 +38,4 @@ fetchMovieData();
 // 최종적으로 만든 두 기능을 합친다.
 
 // 솔직하게 모른다고 말하기. 설명 듣고 혼자서 다시 해보기.
+// 콜백 함수, dom 함수

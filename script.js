@@ -52,14 +52,14 @@ const showMovies = (movies) => {
     main.appendChild(movieEl);
 
     //팝업 알람
-    movieEl.addEventListener("click", () => {
-      alert(`영화 ID: ${id}`);
-    });
+    //movieEl.addEventListener("click", () => {
+    //  alert(`영화 ID: ${id}`);
+    //});
 
     //카드 클릭하면 상세 페이지
     movieEl.addEventListener("click", clickPopup);
     function clickPopup() {
-      location.href = "C:\work\B2COIN\detail\moviedetail.html";
+      location.href = `./detail/moviedetail.html?id=${id}`;
     };
 
   });
