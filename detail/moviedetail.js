@@ -24,8 +24,6 @@ async function fetchMovieData() {
 }
 fetchMovieData();
 
-
-
 // 가져온 정보값을 html에서 지정한 위치에 보낸다.
 //document.getElementById('영화 제목')와 innerHTML="" 활용
 
