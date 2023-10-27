@@ -59,34 +59,7 @@ const showMovies = (movies) => {
 getMovies(APIURL);
 
 
-// 모달 다이얼로그 요소와 닫기 버튼 요소를 가져옵니다
-const modal = document.getElementById("myModal");
-const closeBtn = document.getElementsByClassName("close")[0];
-
-// 모달 열기
-function openModal(movie) {
-  const movieTitle = document.getElementById("movieTitle");
-  const movieOverview = document.getElementById("movieOverview");
-  const movieRating = document.getElementById("movieRating");
-
-  movieTitle.textContent = movie.title;
-  movieOverview.textContent = movie.overview;
-  movieRating.textContent = `Rating: ${movie.vote_average}`;
-
-  modal.style.display = "block";
-}
-
-// 모달 닫기
-closeBtn.onclick = function() {
-  modal.style.display = "none";
-}
-
-// 영화 카드 클릭 이벤트에 모달 열기 함수를 연결
-movieEl.addEventListener("click", () => {
-  openModal(movie);
-});
-
-
+d
 
 
 
