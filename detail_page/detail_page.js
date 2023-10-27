@@ -1,9 +1,4 @@
-// 현재 코드 문제(JH)
-// 1. CSS 없음 > 리뷰댓글 쌓이는 부분 아주 엉망
-// 2. 영화 아이디값 제대로 넘어오는지 확인 불가 > 계속 수정 예정
 
-
-// 아이디, 비밀번호, 내용 입력 요소 가져오기
 const idElement = document.getElementById("userId");
 const pwdElement = document.getElementById("userPwd");
 const reviewElement = document.getElementById("userReview");
