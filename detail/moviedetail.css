@@ -1,0 +1,91 @@
+body {
+    font-family: sans-serif;
+    background-color: #000000;
+    color: white;
+    font-size: 20px;
+}
+
+header {
+    background-color: #353535;
+    display: flex;
+    justify-content: flex-end;
+    padding: 1rem;
+}
+
+.home {
+    width: 30px;
+    height: 30px;
+}
+
+.poster {
+    width: 400px;
+    height: 500px;
+}
+
+.page0 {
+    width: 400px;
+    height: 600px;
+    margin: 20px;
+}
+
+h1 {
+    color: white;
+    font-size: 20px;
+}
+
+.movie-info {
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem 1rem;
+    letter-spacing: 0.5px;
+}
+
+.movie-info span {
+    font-size: 15px;
+    background-color: #353535;
+    border-radius: 3px;
+    font-weight: bold;
+    padding: 0.25rem 0.5rem;
+}
+
+.page1 {
+    position: absolute;
+    top: 90px;
+    left: 450px;
+    margin: 10px;
+}
+
+.fact {
+    display: flex;
+    align-items: center;
+}
+
+.age {
+    width: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 15px;
+    border-radius: 3px;
+    padding: 0.25rem 0.5rem;
+    margin-right: 10px;
+}
+
+.release {
+    margin-right: 10px;
+}
+
+.genres {
+    margin-right: 10px;
+}
+
+.tagline {
+    font-size: 30px;
+    font-style: italic;
+    margin-top: 30px;
+}
+
+.overview {
+    margin-top: 30px;
+}
