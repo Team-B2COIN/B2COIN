@@ -1,6 +1,6 @@
 // 현재 코드 문제(JH)
-// 1. CSS 없음 >> 리뷰댓글 쌓이는 부분 엉망
-// 2. 영화 아이디값 제대로 넘어오는지 확인 불가 >> 계속 수정 예정
+// 1. CSS 없음 > 리뷰댓글 쌓이는 부분 아주 엉망
+// 2. 영화 아이디값 제대로 넘어오는지 확인 불가 > 계속 수정 예정
 
 
 // 아이디, 비밀번호, 내용 입력 요소 가져오기
@@ -15,16 +15,17 @@ const movieID = getMovieUrlId();
 function getMovieUrlId() {
     const url = window.location.href;
     const urlParts = url.split('?');
-    const movieUrlPart = new URLSearchParams(urlParts[1]); // 이 부분 수정 예정
+    const movieUrlPart = new URLSearchParams(urlParts[1]); // 아마 여기 수정 예정
     return movieUrlPart.get('id');
 }
 
-// 로컬 스토리지에서 데이터 저장/불러오기
+// 로컬 스토리지에서 데이터 가져오기
 function getCommentsForMovie(movieID) {
     const commentsJSON = localStorage.getItem(`comments_${movieID}`);
     return commentsJSON ? JSON.parse(commentsJSON) : [];
 }
 
+// 로컬 스토리지에 데이터 저장하기
 function saveComment(comment) {
     const comments = getCommentsForMovie(movieID);
     comments.push(comment);
@@ -86,9 +87,12 @@ saveButton.addEventListener("click", () => {
         idElement.value = '';
         pwdElement.value = '';
         reviewElement.value = '';
+
     } else {
-        alert("아이디, 비밀번호, 리뷰 내용을 모두 입력해주세요.");
+        alert("아이디, 비밀번호, 리뷰를 모두 입력해주세요.");
     }
 });
 
 displayComments();
+
+
