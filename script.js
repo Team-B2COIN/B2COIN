@@ -18,7 +18,7 @@ const getMovies = async (url) => {
   window.addEventListener("load", () => {
     showMovies(allMovies);
   });
-
+ 
   showMovies(allMovies);
   const clickBtn = (e) => {
     e.preventDefault();
@@ -38,6 +38,7 @@ const showMovies = (movies) => {
 
   movies.forEach((movie) => {
     const { id, poster_path, title, vote_average, overview } = movie;
+    const roundedVoteAverage = vote_average.toFixed(1);
     const movieEl = document.createElement("div");
 
     movieEl.classList.add("movie");
@@ -45,10 +46,10 @@ const showMovies = (movies) => {
                           <img src="${IMGPATH + poster_path}" alt="${title}"/>
                           <div class="movie-info">
                           <h3>${title}</h3>
-                          <span>${vote_average}</span>
+                          <span>${roundedVoteAverage}</span>
                           </div>
                           <div class="overview"> ${overview} <div>`;
-
+    
     main.appendChild(movieEl);
     movieEl.addEventListener("click", () => {
   
