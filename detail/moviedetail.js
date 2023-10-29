@@ -1,4 +1,3 @@
-
 let urlStr = window.location.href;
 let url = new URL(urlStr);
 let urlparams = url.searchParams;
@@ -6,11 +5,10 @@ let iddetail = urlparams.get('id');
 
 const IMGPATH = "https://image.tmdb.org/t/p/w500";
 
-const main = document.getElementById("main")
-
+const main = document.getElementById("main");
 
 async function fetchMovieData() {
-  try {
+  
     const options = {
       method: "GET",
       headers: {
@@ -20,29 +18,17 @@ async function fetchMovieData() {
       },
     };
     const response = await fetch(
-      `https://api.themoviedb.org/3/movie/movie_id?api_key=2bc3945c7a677ba731052247cfa86a41&language=eng`,
-      options
+      `https://api.themoviedb.org/3/movie/${iddetail}?api_key=2bc3945c7a677ba731052247cfa86a41&language=eng`, 
     );
     const data = await response.json();
-    if (data) {
-      showMovie(data);
-    } else {
-      console.error("No data received from the API.");
-    }
-  } catch (error) {
-    console.error("An error occurred:", error);
-  }
-}
+    console.log(data);
+    showMovie(data);
+  } 
 
 fetchMovieData();
 
-
-
-
-
-
 const showMovie = (movie) => {
-  const { id, poster_path, title, vote_average, overview } = movie;
+  const { id, poster_path, title, vote_average, overview } = movie; //추가적인 정보 여기서 
   const roundedVoteAverage = vote_average.toFixed(1);
   const movieEl = document.createElement("div");
 
@@ -53,11 +39,11 @@ const showMovie = (movie) => {
                           <h3>${title}</h3>
                           <span>${roundedVoteAverage}</span>
                           </div>
-                          <div class="overview"> ${overview} <div>`;
+                          <div class="overview">${overview}</div>`;
 
   main.appendChild(movieEl);
 };
 
-
-
-
+//데이터 가져올려면 메인에서 이동해야 됩니다
+//요구사항: html 내부 제거, css 조정
+//댓글 기능 병합...
