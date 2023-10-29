@@ -35,17 +35,18 @@ const getMovies = async (url) => {
 
 const showMovies = (movies) => {
   main.innerHTML = "";
-
-  movies.forEach((movie) => {
+// 화면을 다시 그려주기 위해서.
+  movies.forEach( (movie) => {
     const { id, poster_path, title, vote_average, overview } = movie;
     const movieEl = document.createElement("div");
-
+    const vote1 = (vote_average).toFixed(1)
+    
     movieEl.classList.add("movie");
     movieEl.innerHTML = `
                           <img src="${IMGPATH + poster_path}" alt="${title}"/>
                           <div class="movie-info">
                           <h3>${title}</h3>
-                          <span>${vote_average}</span>
+                          <span>${vote1}</span>
                           </div>
                           <div class="overview"> ${overview} <div>`;
 

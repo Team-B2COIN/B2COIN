@@ -22,7 +22,7 @@ header {
     height: 500px;
 }
 
-.page0 {
+#page0 {
     width: 400px;
     height: 600px;
     margin: 20px;
@@ -30,7 +30,8 @@ header {
 
 h1 {
     color: white;
-    font-size: 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
 }
 
 .movie-info {
@@ -50,7 +51,7 @@ h1 {
     padding: 0.25rem 0.5rem;
 }
 
-.page1 {
+#page1 {
     position: absolute;
     top: 90px;
     left: 450px;
@@ -83,6 +84,7 @@ h1 {
 .tagline {
     font-size: 30px;
     font-style: italic;
+    font-weight: bold;
     margin-top: 30px;
 }
 

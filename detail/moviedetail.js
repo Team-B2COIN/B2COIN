@@ -1,5 +1,7 @@
 // (쿼리 스트링을 활용) 클릭한 카드의 id값을 가져와서 해당 상세 페이지 JSON을 가져온다.
 
+const IMGPATH = "https://image.tmdb.org/t/p/w500";
+
 let urlStr = window.location.href;
 let url = new URL(urlStr);
 let urlparams = url.searchParams;
@@ -16,12 +18,35 @@ async function fetchMovieData() {
   };
   const response = await fetch(
     `https://api.themoviedb.org/3/movie/${iddetail}?api_key=8172f03c96ba74084086d2a8724c2989`,
-    options
-  );
-  const data = await response.json();
-  console.log(data);
-  return data;
-}
+    options)
+  .then(response => response.json())
+  .then(response => {
+  const { title, overview, poster_path, vote_average, release_date, genres, runtime, tagline } = response;
+  const test0 = document.getElementById("page0")
+  const vote1 = (vote_average).toFixed(1)
+  test0.innerHTML = `
+  <img class="poster" src="${IMGPATH + poster_path}" alt="">
+  <div class="movie-info">
+    <h1>${title}</h1>
+    <span>${vote1}</span>`;
+
+  const test1 = document.getElementById("page1")
+  test1.innerHTML = `
+    <div class="fact">
+    <div class="age">정보</div>
+    <div class="release">${release_date}</div>
+    <div class="genres">${genres[0].name}</div>
+    <div class="runtime">${runtime}분</div>
+  </div>
+  <div class="tagline">${tagline}</div>
+  <div class="overview">${overview}</div>`;
+
+  console.log(response);
+return response;
+})}
+
+
+
 fetchMovieData();
 
 // 가져온 정보값을 html에서 지정한 위치에 보낸다.
