@@ -15,10 +15,7 @@ const getMovies = async (url) => {
   const { results } = respData;
   allMovies = results;
 
-  window.addEventListener("load", () => {
-    showMovies(allMovies);
-  });
- 
+  
   showMovies(allMovies);
   const clickBtn = (e) => {
     e.preventDefault();
@@ -58,7 +55,6 @@ const showMovies = (movies) => {
       // 해당 영화의 상세 정보 페이지로 이동합니다.
       location.href = `./detail/moviedetail.html?id=${clickedMovieID}`;
     });
-
 
   });
 };
