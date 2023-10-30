@@ -37,8 +37,8 @@ export function displayComments() {
                               <p>${comment.name}</p>
                               <p>${comment.review}</p> `;
 
-      const deleteButton = addDeleteButton(comment, index);
-      commentDiv.appendChild(deleteButton);
+      // const deleteButton = addDeleteButton(comment, index);
+      // commentDiv.appendChild(deleteButton);
       commentStack.appendChild(commentDiv);
   });
 }
