@@ -32,6 +32,29 @@
       <div class="tagline"></div>
       <div class="overview"></div>
     </div>
+
+    <form id="commentMain">
+      <h1> 상세페이지</h1>
+      COMMENT
+      <br>--------------------------------------------------------------------------------------------------</br>
+      <div>
+        <label> 작성자명 : </label>
+        <input id="userId" type="text" placeholder="name" required>
+
+        <label> 비밀번호 : </label>
+        <input id="userPwd" type="password" placeholder="password" required>
+        <br></br>
+
+        <label> 리뷰 작성 </label>
+        <br></br>
+        <textarea id="userReview" type="text" placeholder="댓글을 입력하세요." required> </textarea>
+
+        <button id="saveBtn" type="submit" value="click"> 저장 </button>
+      </div>
+      --------------------------------------------------------------------------------------------------
+    </form>
+    <div id="commentStack"> </div>
+
     <script src="moviedetail.js"></script>
   </body>
 

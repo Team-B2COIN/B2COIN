@@ -19,19 +19,19 @@ async function fetchMovieData() {
   const response = await fetch(
     `https://api.themoviedb.org/3/movie/${iddetail}?api_key=8172f03c96ba74084086d2a8724c2989`,
     options)
-  .then(response => response.json())
-  .then(response => {
-  const { title, overview, poster_path, vote_average, release_date, genres, runtime, tagline } = response;
-  const test0 = document.getElementById("page0")
-  const vote1 = (vote_average).toFixed(1)
-  test0.innerHTML = `
+    .then(response => response.json())
+    .then(response => {
+      const { title, overview, poster_path, vote_average, release_date, genres, runtime, tagline } = response;
+      const test0 = document.getElementById("page0")
+      const vote1 = (vote_average).toFixed(1)
+      test0.innerHTML = `
   <img class="poster" src="${IMGPATH + poster_path}" alt="">
   <div class="movie-info">
     <h1>${title}</h1>
     <span>${vote1}</span>`;
 
-  const test1 = document.getElementById("page1")
-  test1.innerHTML = `
+      const test1 = document.getElementById("page1")
+      test1.innerHTML = `
     <div class="fact">
     <div class="age">정보</div>
     <div class="release">${release_date}</div>
@@ -41,11 +41,10 @@ async function fetchMovieData() {
   <div class="tagline">${tagline}</div>
   <div class="overview">${overview}</div>`;
 
-  console.log(response);
-return response;
-})}
-
-
+      console.log(response);
+      return response;
+    })
+}
 
 fetchMovieData();
 
