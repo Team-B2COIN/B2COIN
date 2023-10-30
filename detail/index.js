@@ -1,7 +1,7 @@
 import {
     displayComments,
     fetchMovieData,
-} from "./detail_page.js";
+} from "./moviedetail.js";
 
 displayComments();
 fetchMovieData();

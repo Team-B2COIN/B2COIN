@@ -2,10 +2,12 @@
 
 const IMGPATH = "https://image.tmdb.org/t/p/w500";
 
+function getMovieUrlId() {
 let urlStr = window.location.href;
 let url = new URL(urlStr);
 let urlparams = url.searchParams;
 let iddetail = urlparams.get('id');
+}
 
 // 로컬 스토리지에서 데이터 가져오기
 function getCommentsForMovie(movieId) {
@@ -18,23 +20,6 @@ function saveComment(comment) {
   const comments = getCommentsForMovie(movieIdFromUrl);
   comments.push(comment);
   localStorage.setItem(`comments_${movieIdFromUrl}`, JSON.stringify(comments));
-}
-
-// 댓글 삭제 버튼 및 기능 추가
-function addDeleteButton(comment, index) {
-  const deleteButton = document.createElement('button');
-  deleteButton.innerText = '삭제';
-  deleteButton.addEventListener('click', () => {
-      deleteComment(index);
-  });
-  return deleteButton;
-}
-
-function deleteComment(index) {
-  const comments = getCommentsForMovie(movieIdFromUrl);
-  comments.splice(index, 1); // 선택한 댓글 삭제
-  localStorage.setItem(`comments_${movieIdFromUrl}`, JSON.strnigify(comments));
-  displayComments(); // 삭제 후 댓글 목록 새로고침
 }
 
 // 댓글 목록을 화면에 표시하는 함수 업데이트
@@ -101,7 +86,7 @@ const pwdElement = document.getElementById("userPwd");
 const reviewElement = document.getElementById("userReview");
 const saveButton = document.getElementById("saveBtn");
 
-// 현재 영화 ID 가져오기
+// 입력값 가져오기
 const movieIdFromUrl = getMovieUrlId();
 console.log(movieIdFromUrl); //변수 선언 및 할당
 
