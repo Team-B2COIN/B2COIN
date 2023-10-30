@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="moviedetail.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>상세 페이지</title>
+</head>
+
+<body>
+  <header><a href="../index.html">
+      <img class="home"
+        src="https://w7.pngwing.com/pngs/512/83/png-transparent-home-page-house-button-user-interface-icon.png" alt="">
+      <a></header>
+
+  <body>
+    <div id="page0">
+      <img class="poster" src="" alt="">
+      <div class="movie-info">
+        <h1>영화 제목</h1>
+        <span>9.0</span>
+      </div>
+    </div>
+    <div id="page1">
+      <div class="fact">
+        <div class="age">정보</div>
+        <div class="release"></div>
+        <div class="genres"></div>
+        <div class="runtime"></div>
+      </div>
+      <div class="tagline"></div>
+      <div class="overview"></div>
+    </div>
+
+    <form id="commentMain">
+      <h1> 상세페이지</h1>
+      COMMENT
+      <br>--------------------------------------------------------------------------------------------------</br>
+      <div>
+        <label> 작성자명 : </label>
+        <input id="userId" type="text" placeholder="name" required>
+
+        <label> 비밀번호 : </label>
+        <input id="userPwd" type="password" placeholder="password" required>
+        <br></br>
+
+        <label> 리뷰 작성 </label>
+        <br></br>
+        <textarea id="userReview" type="text" placeholder="댓글을 입력하세요." required> </textarea>
+
+        <button id="saveBtn" type="submit" value="click"> 저장 </button>
+      </div>
+      --------------------------------------------------------------------------------------------------
+    </form>
+    <div id="commentStack"> </div>
+
+    <!-- <script type="module" src="moviedetail.js"></script> -->
+    <script type="module" src="index.js"></script>
+  </body>
+
+</html>
